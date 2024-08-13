@@ -115,7 +115,12 @@ if (Cadena != null) // Asegura que la cadena no sea nula
             }
         }
 
-        
+        using System.Text.RegularExpressions;
+        Console.WriteLine("Ingrese un email:\n");
+        string email = Console.ReadLine();
+        string pattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+        bool isValid = Regex.IsMatch(email, pattern);
+        Console.WriteLine(isValid); // True si el correo es válido
     }
 
 
